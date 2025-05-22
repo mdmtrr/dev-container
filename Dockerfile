@@ -16,6 +16,9 @@ RUN chmod +x ./bin/cherryctl
 RUN ls -lah
 
 FROM ubuntu:${UBUNTU_VERSION} AS dev-container
+
+ARG ANSIBLE_CORE_VERSION="2.17.11"
+
 RUN apt update && apt install -y\
     python3\
     python3-pip\
@@ -33,5 +36,5 @@ RUN useradd -rm -d /home/dev -s /bin/bash -g root -G sudo -u 1001 dev
 USER dev
 WORKDIR /home/dev
 RUN python3 -m pip install --user\
-    ansible
+    ansible-core==${ANSIBLE_CORE_VERSION}
 ENV PATH=".local/bin/:$PATH"
