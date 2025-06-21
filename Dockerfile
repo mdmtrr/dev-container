@@ -40,4 +40,4 @@ USER dev
 WORKDIR /home/dev
 RUN python3 -m pip install --user\
     ansible-core==${ANSIBLE_CORE_VERSION}
-ENV PATH=".local/bin/:$PATH"
+ENV PATH="/home/dev/.local/bin/:$PATH"
