@@ -28,4 +28,4 @@ jobs:
         with:
           context: .
           push: true
-          tags: mdmitrii/dev-containet:${{ github.sha }}
+          tags: mdmitrii/dev-container:${{ github.sha }}
